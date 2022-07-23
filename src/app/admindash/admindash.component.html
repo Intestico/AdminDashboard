@@ -1,0 +1,101 @@
+
+
+
+<section class="view intro-2">
+  <div class="full-bg-img mask rgba-gradient">
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+
+  
+  <mat-card class="admin">
+    <div>
+    <mat-card-header>
+      <mat-card-title>Play with work Items</mat-card-title>
+    </mat-card-header>
+    </div>
+    <mat-card-content>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Select your Vehicle</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <mat-form-field appearance="fill">
+        <mat-label>Select your Driver</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button color="primary" type="submit">Allow Barrier Access</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      
+      <input matInput:search placeholder="WorkItems As per Vehicle">
+      &nbsp;&nbsp;&nbsp;&nbsp; 
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon>search</mat-icon>
+        </button>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      
+      
+    </mat-card-actions>
+  </mat-card>
+</form>
+  </div>
+  <div>
+    <table cdk-table [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container cdkColumnDef="name">
+        <th cdk-header-cell *cdkHeaderCellDef> Name </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container cdkColumnDef="id">
+        <th cdk-header-cell *cdkHeaderCellDef> Id </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    
+
+      <ng-container cdkColumnDef="userid">
+        <th cdk-header-cell *cdkHeaderCellDef>User Id <mat-icon>sorting</mat-icon></th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.userid}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container cdkColumnDef="type">
+        <th cdk-header-cell *cdkHeaderCellDef> Type </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+
+      <!--Quantity column-->
+      <ng-container cdkColumnDef="quantity">
+        <th cdk-header-cell *cdkHeaderCellDef> Quantity </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.quantity}} </td>
+      </ng-container>
+
+      <!--From column-->
+      <ng-container cdkColumnDef="from">
+        <th cdk-header-cell *cdkHeaderCellDef> From </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.from}} </td>
+      </ng-container>
+
+
+      <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+      <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+  </div>
+</section>
+
+
+
+
